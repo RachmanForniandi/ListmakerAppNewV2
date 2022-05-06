@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_detail.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_main.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\todo_list_view_holder.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\todo_list_view_holder.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_second.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_todolist.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\fragment_todolist.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\task_view_holder.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\task_view_holder.xml"
+    }
+]
