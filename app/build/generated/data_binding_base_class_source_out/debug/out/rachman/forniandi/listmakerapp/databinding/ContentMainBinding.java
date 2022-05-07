@@ -4,10 +4,10 @@ package rachman.forniandi.listmakerapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -20,12 +20,12 @@ public final class ContentMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final RecyclerView listsRecyclerview;
+  public final FrameLayout fragmentContainer;
 
   private ContentMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RecyclerView listsRecyclerview) {
+      @NonNull FrameLayout fragmentContainer) {
     this.rootView = rootView;
-    this.listsRecyclerview = listsRecyclerview;
+    this.fragmentContainer = fragmentContainer;
   }
 
   @Override
@@ -55,13 +55,13 @@ public final class ContentMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.lists_recyclerview;
-      RecyclerView listsRecyclerview = ViewBindings.findChildViewById(rootView, id);
-      if (listsRecyclerview == null) {
+      id = R.id.fragment_container;
+      FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (fragmentContainer == null) {
         break missingId;
       }
 
-      return new ContentMainBinding((ConstraintLayout) rootView, listsRecyclerview);
+      return new ContentMainBinding((ConstraintLayout) rootView, fragmentContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

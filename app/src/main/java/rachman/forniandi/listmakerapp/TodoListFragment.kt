@@ -12,10 +12,11 @@ import rachman.forniandi.listmakerapp.databinding.FragmentTodolistBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class TodoListFragment : Fragment() {
+class TodoListFragment : Fragment(),TodoListAdapter.TodoListClickListener {
 
     private var _binding: FragmentTodolistBinding? = null
     private var listener: OnFragmentInteractionListener?=null
+    private lateinit var listDataManager:ListDataManager
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -44,15 +45,18 @@ class TodoListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
+        val lists = listDataManager.readList()
+        binding.listsRecyclerview.adapter = TodoListAdapter(lists,this)
+        /*binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+        }*/
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener){
             listener= context
+            listDataManager =ListDataManager(context)
         }
 
     }
@@ -69,5 +73,26 @@ class TodoListFragment : Fragment() {
 
     interface OnFragmentInteractionListener {
         fun onTodoListClicked(list: TaskList)
+    }
+
+    override fun listItemClicked(list: TaskList) {
+        listener?.onTodoListClicked(list)
+    }
+
+    fun addList(list: TaskList) {
+        listDataManager.saveList(list)
+        val todoAdapter = binding.listsRecyclerview.adapter as TodoListAdapter
+        todoAdapter.addList(list)
+    }
+
+    fun saveList(list: TaskList) {
+        listDataManager.saveList(list)
+        updateLists()
+    }
+
+    private fun updateLists() {
+        val listsOnTodolist = listDataManager.readList()
+        //binding.includedMainLayout.listsRecyclerview.adapter = TodoListAdapter(listsOnTodolist,this)
+
     }
 }

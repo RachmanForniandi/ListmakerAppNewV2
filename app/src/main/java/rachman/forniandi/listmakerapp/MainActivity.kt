@@ -16,11 +16,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import rachman.forniandi.listmakerapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(),TodoListAdapter.TodoListClickListener {
+class MainActivity : AppCompatActivity(),TodoListFragment.OnFragmentInteractionListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val listDataManager:ListDataManager = ListDataManager(this)
+    private var todoListFragment = TodoListFragment.newInstance()
 
     companion object{
         const val INTENT_LIST_KEY = "LIST"
@@ -34,13 +35,13 @@ class MainActivity : AppCompatActivity(),TodoListAdapter.TodoListClickListener {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        val lists = listDataManager.readList()
+        //val lists = listDataManager.readList()
 
         /*val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)*/
         //binding.includedMainLayout.listsRecyclerview.layoutManager = LinearLayoutManager(this)
-        binding.includedMainLayout.listsRecyclerview.adapter = TodoListAdapter(lists,this)
+        //binding.includedMainLayout.listsRecyclerview.adapter = TodoListAdapter(lists,this)
 
         binding.fab.setOnClickListener { _->
             /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity(),TodoListAdapter.TodoListClickListener {
             adapter.addNewItem()*/
             showCreateTodoListDialog()
         }
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container,todoListFragment)
+            .commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -62,17 +66,18 @@ class MainActivity : AppCompatActivity(),TodoListAdapter.TodoListClickListener {
         if (requestCode == LIST_DETAIL_REQUEST_CODE){
             data.let {
                 val list = data?.getParcelableExtra<TaskList>(INTENT_LIST_KEY)!!
-                listDataManager.saveList(list)
-                updateLists()
+                todoListFragment.saveList(list)
+                //listDataManager.saveList(list)
+                //updateLists()
 
             }
         }
     }
 
-    private fun updateLists() {
+    /*private fun updateLists() {
         val listsUpdate = listDataManager.readList()
         binding.includedMainLayout.listsRecyclerview.adapter = TodoListAdapter(listsUpdate,this)
-    }
+    }*/
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -96,10 +101,11 @@ class MainActivity : AppCompatActivity(),TodoListAdapter.TodoListClickListener {
 
         dialog.setPositiveButton(positiveButtonTittle){
             dialog, _->
-            val adapter = binding.includedMainLayout.listsRecyclerview.adapter as TodoListAdapter
+            //val adapter = binding.includedMainLayout.listsRecyclerview.adapter as TodoListAdapter
             val list = TaskList(editTextDialog.text.toString())
-            listDataManager.saveList(list)
-            adapter.addList(list)
+            todoListFragment.addList(list)
+            //listDataManager.saveList(list)
+            //adapter.addList(list)
             dialog.dismiss()
             showTaskListItem(list)
         }
@@ -113,7 +119,11 @@ class MainActivity : AppCompatActivity(),TodoListAdapter.TodoListClickListener {
 
     }
 
-    override fun listItemClicked(list: TaskList) {
+    /*override fun listItemClicked(list: TaskList) {
+        showTaskListItem(list)
+    }*/
+
+    override fun onTodoListClicked(list: TaskList) {
         showTaskListItem(list)
     }
 
