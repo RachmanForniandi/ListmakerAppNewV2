@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity(),TodoListFragment.OnFragmentInteractionL
             adapter.addNewItem()*/
             showCreateTodoListDialog()
         }
-        supportFragmentManager.beginTransaction()
+        /*supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container,todoListFragment)
-            .commit()
+            .commit()*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

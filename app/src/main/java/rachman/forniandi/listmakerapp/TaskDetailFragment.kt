@@ -14,11 +14,18 @@ import rachman.forniandi.listmakerapp.databinding.FragmentTaskDetailBinding
 class TaskDetailFragment : Fragment() {
 
     private var _binding: FragmentTaskDetailBinding? = null
+    lateinit var list: TaskList
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments.let {
+            list = it?.getParcelable(ARG_LIST)!!
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,5 +47,19 @@ class TaskDetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object{
+        private val ARG_LIST="list"
+
+        fun newInstance(list: TaskList): TaskDetailFragment {
+            val bundle = Bundle()
+            bundle.putParcelable(ARG_LIST,list)
+
+            val fragment = TaskDetailFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
+
     }
 }
