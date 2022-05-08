@@ -27,7 +27,7 @@ id action_settings
 id btn_add_task
 id button_second
 id fab
-id fragment_container
+id fab_todo_list
 id included_main_layout
 id itemNumber
 id itemString
@@ -36,11 +36,12 @@ id nav_graph
 id task_list_recyclerview
 id textview_second
 id textview_task
+id todolist_fragment
 id toolbar
 layout activity_detail
 layout activity_main
 layout content_main
-layout fragment_second
+layout fragment_task_detail
 layout fragment_todolist
 layout task_view_holder
 layout todo_list_view_holder

@@ -4,12 +4,13 @@ package rachman.forniandi.listmakerapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -17,20 +18,24 @@ import rachman.forniandi.listmakerapp.R;
 
 public final class FragmentTodolistBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final FloatingActionButton fabTodoList;
 
   @NonNull
   public final RecyclerView listsRecyclerview;
 
-  private FragmentTodolistBinding(@NonNull FrameLayout rootView,
-      @NonNull RecyclerView listsRecyclerview) {
+  private FragmentTodolistBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull FloatingActionButton fabTodoList, @NonNull RecyclerView listsRecyclerview) {
     this.rootView = rootView;
+    this.fabTodoList = fabTodoList;
     this.listsRecyclerview = listsRecyclerview;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -55,13 +60,20 @@ public final class FragmentTodolistBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.fab_todo_list;
+      FloatingActionButton fabTodoList = ViewBindings.findChildViewById(rootView, id);
+      if (fabTodoList == null) {
+        break missingId;
+      }
+
       id = R.id.lists_recyclerview;
       RecyclerView listsRecyclerview = ViewBindings.findChildViewById(rootView, id);
       if (listsRecyclerview == null) {
         break missingId;
       }
 
-      return new FragmentTodolistBinding((FrameLayout) rootView, listsRecyclerview);
+      return new FragmentTodolistBinding((CoordinatorLayout) rootView, fabTodoList,
+          listsRecyclerview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,6 +4,10 @@
         "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\activity_detail.xml"
     },
     {
+        "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_task_detail.xml",
+        "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\fragment_task_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_main.xml",
         "source": "C:\\Users\\USER\\AndroidStudioProjects\\Raywenderlich\\ListMakerApp\\app\\src\\main\\res\\layout\\content_main.xml"
     },
