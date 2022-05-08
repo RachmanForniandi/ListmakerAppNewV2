@@ -9,6 +9,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import rachman.forniandi.listmakerapp.databinding.FragmentTodolistBinding
 
 /**
@@ -56,14 +57,11 @@ class TodoListFragment : Fragment(),TodoListAdapter.TodoListClickListener {
         /*binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }*/
-        binding.fabTodoList.setOnClickListener { _->
-            //*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG) .setAction("Action", null).show()*//*
-            //*val adapter = binding.includedMainLayout.listsRecyclerview.adapter as TodoListAdapter adapter.addNewItem()*//*
+
+
+        /*binding.fabTodoList.setOnClickListener { _->
                     showCreateTodoListDialog()
-        }
-
-
-
+        }*/
 
     }
 
@@ -95,6 +93,7 @@ class TodoListFragment : Fragment(),TodoListAdapter.TodoListClickListener {
         taskListItem.putExtra(MainActivity.INTENT_LIST_KEY,list)
         startActivityForResult(taskListItem, MainActivity.LIST_DETAIL_REQUEST_CODE)*/
 
+
     }
 
     /*override fun onAttach(context: Context) {
@@ -122,6 +121,9 @@ class TodoListFragment : Fragment(),TodoListAdapter.TodoListClickListener {
 
     override fun listItemClicked(list: TaskList) {
         //listener?.onTodoListClicked(list)
+        view.let {
+            it?.findNavController()?.navigate(R.id.action_TodoListFragment_to_TaskDetailFragment)
+        }
     }
 
     fun addList(list: TaskList) {

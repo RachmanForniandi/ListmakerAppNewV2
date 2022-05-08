@@ -13,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import rachman.forniandi.listmakerapp.databinding.ActivityMainBinding
 
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        Navigation.findNavController(this,R.id.nav_host_fragment_container)
         //val lists = listDataManager.readList()
 
         /*val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -112,12 +114,12 @@ class MainActivity : AppCompatActivity() {
         dialog.create().show()
     }*/
 
-    private fun showTaskListItem(list: TaskList){
+    /*private fun showTaskListItem(list: TaskList){
         val taskListItem= Intent(this,DetailActivity::class.java)
         taskListItem.putExtra(INTENT_LIST_KEY,list)
         startActivityForResult(taskListItem, LIST_DETAIL_REQUEST_CODE)
 
-    }
+    }*/
 
     /*override fun listItemClicked(list: TaskList) {
         showTaskListItem(list)

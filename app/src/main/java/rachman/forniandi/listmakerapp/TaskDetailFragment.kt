@@ -43,10 +43,10 @@ class TaskDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.taskListRecyclerview.adapter= TaskListAdapter(list)
-        binding.btnAddTask.setOnClickListener {
+        /*binding.btnAddTask.setOnClickListener {
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             showCreateTaskDialog()
-        }
+        }*/
     }
 
     private fun showCreateTaskDialog() {
