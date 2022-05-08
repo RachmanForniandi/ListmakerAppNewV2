@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/task_list_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -25,5 +25,5 @@
         app:srcCompat="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

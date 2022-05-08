@@ -2741,7 +2741,6 @@ id bounceEnd
 id bounceStart
 id btn_add_task
 id buttonPanel
-id button_second
 id cache_measures
 id callMeasure
 id cancel_action
@@ -3109,7 +3108,6 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
-id textview_second
 id textview_task
 id time
 id title

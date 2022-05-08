@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Raywenderlich/ListMakerApp/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Raywenderlich/ListMakerApp/app/src/main/res/layout/activity_main.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Raywenderlich/ListMakerApp/app/src/main/res/layout/content_main.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Raywenderlich/ListMakerApp/app/src/main/res/layout/fragment_detail.xml" value="0.1160081053698075" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Raywenderlich/ListMakerApp/app/src/main/res/layout/fragment_task_detail.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Raywenderlich/ListMakerApp/app/src/main/res/layout/fragment_todolist.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/USER/raywenderlich/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/USER/raywenderlich/app/src/main/res/layout/activity_main.xml" value="0.264" />

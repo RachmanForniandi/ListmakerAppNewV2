@@ -25,7 +25,6 @@ id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
 id action_settings
 id btn_add_task
-id button_second
 id fab
 id fab_todo_list
 id included_main_layout
@@ -34,7 +33,6 @@ id itemString
 id lists_recyclerview
 id nav_graph
 id task_list_recyclerview
-id textview_second
 id textview_task
 id todolist_fragment
 id toolbar

@@ -4,13 +4,13 @@ package rachman.forniandi.listmakerapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -18,24 +18,24 @@ import rachman.forniandi.listmakerapp.R;
 
 public final class FragmentTaskDetailBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final Button buttonSecond;
+  public final FloatingActionButton btnAddTask;
 
   @NonNull
-  public final TextView textviewSecond;
+  public final RecyclerView taskListRecyclerview;
 
-  private FragmentTaskDetailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonSecond, @NonNull TextView textviewSecond) {
+  private FragmentTaskDetailBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull FloatingActionButton btnAddTask, @NonNull RecyclerView taskListRecyclerview) {
     this.rootView = rootView;
-    this.buttonSecond = buttonSecond;
-    this.textviewSecond = textviewSecond;
+    this.btnAddTask = btnAddTask;
+    this.taskListRecyclerview = taskListRecyclerview;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -60,20 +60,20 @@ public final class FragmentTaskDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_second;
-      Button buttonSecond = ViewBindings.findChildViewById(rootView, id);
-      if (buttonSecond == null) {
+      id = R.id.btn_add_task;
+      FloatingActionButton btnAddTask = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddTask == null) {
         break missingId;
       }
 
-      id = R.id.textview_second;
-      TextView textviewSecond = ViewBindings.findChildViewById(rootView, id);
-      if (textviewSecond == null) {
+      id = R.id.task_list_recyclerview;
+      RecyclerView taskListRecyclerview = ViewBindings.findChildViewById(rootView, id);
+      if (taskListRecyclerview == null) {
         break missingId;
       }
 
-      return new FragmentTaskDetailBinding((ConstraintLayout) rootView, buttonSecond,
-          textviewSecond);
+      return new FragmentTaskDetailBinding((CoordinatorLayout) rootView, btnAddTask,
+          taskListRecyclerview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

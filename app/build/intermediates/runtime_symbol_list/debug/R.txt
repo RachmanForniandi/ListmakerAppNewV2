@@ -2740,7 +2740,6 @@ int id bounceEnd 0x7f080067
 int id bounceStart 0x7f080068
 int id btn_add_task 0x7f080069
 int id buttonPanel 0x7f08006a
-int id button_second 0x7f08006b
 int id cache_measures 0x7f08006c
 int id callMeasure 0x7f08006d
 int id cancel_action 0x7f08006e
@@ -3108,7 +3107,6 @@ int id textinput_helper_text 0x7f0801d7
 int id textinput_placeholder 0x7f0801d8
 int id textinput_prefix_text 0x7f0801d9
 int id textinput_suffix_text 0x7f0801da
-int id textview_second 0x7f0801db
 int id textview_task 0x7f0801dc
 int id time 0x7f0801dd
 int id title 0x7f0801de

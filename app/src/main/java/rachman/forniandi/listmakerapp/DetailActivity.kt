@@ -22,20 +22,20 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         //setContentView(R.layout.activity_detail)
         setContentView(binding.root)
-        listKey = intent.getParcelableExtra<TaskList>(MainActivity.INTENT_LIST_KEY) as TaskList
-        title = listKey.name
+        /*listKey = intent.getParcelableExtra<TaskList>(MainActivity.INTENT_LIST_KEY) as TaskList
+        title = listKey.name*/
 
-        binding.taskListRecyclerview.adapter = TaskListAdapter(listKey)
+        /*binding.taskListRecyclerview.adapter = TaskListAdapter(listKey)
 
-        /*binding.taskListRecyclerview.layoutManager =LinearLayoutManager(this)
-        binding.taskListRecyclerview.adapter = TaskListAdapter(listKey)*/
+        *//*binding.taskListRecyclerview.layoutManager =LinearLayoutManager(this)
+        binding.taskListRecyclerview.adapter = TaskListAdapter(listKey)*//*
         binding.btnAddTask.setOnClickListener {
-            showCreateTaskDialog()
-        }
+            //showCreateTaskDialog()
+        }*/
 
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         val bundle = Bundle()
         bundle.putParcelable(MainActivity.INTENT_LIST_KEY,listKey)
 
@@ -44,9 +44,9 @@ class DetailActivity : AppCompatActivity() {
         setResult(Activity.RESULT_OK,intent)
         super.onBackPressed()
 
-    }
+    }*/
 
-    private fun showCreateTaskDialog() {
+    /*private fun showCreateTaskDialog() {
         val editTextDialog= EditText(this)
         editTextDialog.inputType = InputType.TYPE_CLASS_TEXT
         AlertDialog.Builder(this)
@@ -62,5 +62,5 @@ class DetailActivity : AppCompatActivity() {
             .show()
 
 
-    }
+    }*/
 }

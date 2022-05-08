@@ -1,16 +1,14 @@
 package rachman.forniandi.listmakerapp
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import rachman.forniandi.listmakerapp.databinding.FragmentTodolistBinding
 
 /**
@@ -50,7 +48,7 @@ class TodoListFragment : Fragment(),TodoListAdapter.TodoListClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         activity?.let {
-            listDataManager =ListDataManager(it)
+            listDataManager =ViewModelProvider(this).get(ListDataManager::class.java)
         }
 
         val lists = listDataManager.readList()
@@ -139,6 +137,7 @@ class TodoListFragment : Fragment(),TodoListAdapter.TodoListClickListener {
 
     private fun updateLists() {
         val listsOnTodolist = listDataManager.readList()
+        binding.listsRecyclerview.adapter= TodoListAdapter(listsOnTodolist,this)
         //binding.includedMainLayout.listsRecyclerview.adapter = TodoListAdapter(listsOnTodolist,this)
 
     }

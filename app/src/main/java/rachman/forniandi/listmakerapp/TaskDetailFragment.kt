@@ -1,10 +1,13 @@
 package rachman.forniandi.listmakerapp
 
 import android.os.Bundle
+import android.text.InputType
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import rachman.forniandi.listmakerapp.databinding.FragmentTaskDetailBinding
 
@@ -39,8 +42,28 @@ class TaskDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        binding.taskListRecyclerview.adapter= TaskListAdapter(list)
+        binding.btnAddTask.setOnClickListener {
+            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            showCreateTaskDialog()
+        }
+    }
+
+    private fun showCreateTaskDialog() {
+        activity?.let {
+            val editTextDialog= EditText(it)
+            editTextDialog.inputType = InputType.TYPE_CLASS_TEXT
+            AlertDialog.Builder(it)
+                .setTitle(R.string.task_to_add)
+                .setView(editTextDialog)
+                .setPositiveButton(R.string.add_task){
+                        dialog, _->
+                    val task = editTextDialog.text.toString()
+                    list.tasks.add(task)
+                    dialog.dismiss()
+                }
+                .create()
+                .show()
         }
     }
 
